@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>MuXiQiYeLunTan</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/404.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/500.jsp</location>
+  </error-page>
+  
+ 
+  <filter>
+  	<description>登录状态过滤</description>
+  	<filter-name>LoginFilter</filter-name>
+  	<filter-class>com.muxi.filter.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>LoginFilter</filter-name>
+  	<url-pattern>/DepartServlet</url-pattern>
+  	<url-pattern>/MainServlet</url-pattern>
+  	<url-pattern>/PostServlet</url-pattern>
+  	<url-pattern>/SystemServlet</url-pattern>
+  	<url-pattern>/TypeServlet</url-pattern>
+  	<url-pattern>/UserServlet</url-pattern>
+  	
+  </filter-mapping>
+  
+</web-app>
